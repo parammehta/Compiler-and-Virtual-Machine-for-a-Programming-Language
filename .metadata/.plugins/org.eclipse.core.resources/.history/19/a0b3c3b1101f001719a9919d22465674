@@ -1,0 +1,9 @@
+package de.letsbuildacompiler.compiler;
+
+import org.testng.annotations.Test;
+
+public class CompilerTest {
+  @Test
+  public void f() {
+  }
+}

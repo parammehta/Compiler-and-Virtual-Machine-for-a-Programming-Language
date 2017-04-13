@@ -1,0 +1,7 @@
+package de.letsbuildacompiler.compiler;
+
+import de.letsbuildacompiler.parser.DemoBaseVisitor;
+
+public class MyVisitor extends DemoBaseVisitor<String> {
+
+}

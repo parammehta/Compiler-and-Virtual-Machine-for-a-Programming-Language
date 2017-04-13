@@ -1,0 +1,12 @@
+package de.letsbuildacompiler.compiler;
+
+import org.antlr.runtime.ANTLRFileStream;
+import org.antlr.runtime.ANTLRInputStream;
+
+public class Main {
+
+	public static void main(String[] args) throws Exception {
+		ANTLRInputStream input = new ANTLRFileStream("code.demo");
+	}
+
+}

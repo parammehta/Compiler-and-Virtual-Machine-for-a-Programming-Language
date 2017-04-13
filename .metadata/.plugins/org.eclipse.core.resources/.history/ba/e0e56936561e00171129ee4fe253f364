@@ -1,0 +1,6 @@
+grammar Demo;
+
+addition: addition '+' NUM
+	| NUM;
+
+NUM: [0-9]+;

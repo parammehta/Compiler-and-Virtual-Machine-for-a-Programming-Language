@@ -1,0 +1,8 @@
+grammar Demo;
+
+addition
+	: left=addition '+' right=NUM #PLUS | num=NUM #Number
+	;
+print
+	: 'd
+NUM: [0-9]+;
