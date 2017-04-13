@@ -1,0 +1,12 @@
+grammar Demo;
+
+program: (println ';')+;
+
+expression
+	: left=expression '+' right=NUM #PLUS | number=Number #Num
+	;
+
+println: 'println(' argument=addition ')' ;
+
+NUM: [0-9]+;
+WHITESPACE: [ \t\n\r]+ -> skip;

@@ -5,7 +5,8 @@ import org.antlr.v4.runtime.*;
 
 import de.letsbuildacompiler.parser.DemoLexer;
 import de.letsbuildacompiler.parser.DemoParser;
-import de.letsbuildacompiler.parser.DemoParser.AdditionContext;
+import de.letsbuildacompiler.parser.DemoParser.*;
+import de.letsbuildacompiler.parser.DemoParser.ProgramContext;
 
 public class Main {
 
@@ -21,7 +22,7 @@ public class Main {
 		CommonTokenStream tokens = new CommonTokenStream(lexer);
 		DemoParser parser = new DemoParser(tokens);
 		
-		AdditionContext tree = parser.addition();
+		ProgramContext tree = parser.program();
 		return createJasminFile(new MyVisitor().visit(tree));
 	}
 	
@@ -30,14 +31,13 @@ public class Main {
 				".super java/lang/Object\n" +
 
 				".method public static main([Ljava/lang/String;)V\n" +
-					".limit stack 100\n" +
-					".limit locals 100\n" +
+					" .limit stack 100\n" +
+					" .limit locals 100\n" +
 	
-				"getstatic java/lang/System/out Ljava/io/PrintStream;\n" +
+				" \n" +
 				instructions + "\n" +
-				"invokevirtual java/io/PrintStream/println(I)V\n" +
-				"return\n"+ 
-				"\n" +
+				" return\n"+ 
+				" \n" +
 
 				".end method";
 	}

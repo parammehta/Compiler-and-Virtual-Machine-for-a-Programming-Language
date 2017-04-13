@@ -56,8 +56,19 @@ public class CompilerTest {
 	@DataProvider
   public Object[][] provide_code_expectedText(){
 	  return new Object[][]{
-			  {"1+2","3\n"},
-			  {"1+2+42","45\n"}
+			  {"println(1+2)","3" + System.lineSeparator()},
+			  {"println(1+2+42)","45" + System.lineSeparator()},
+			  {"println(1); println(2);",
+				  "1" + System.lineSeparator() +
+				  "2" + System.lineSeparator(),
+			  },
+			  {"println(3-2)","1" + System.lineSeparator()},
+			  {"println(2*3)","6" + System.lineSeparator()},
+			  {"println(6/2)","3" + System.lineSeparator()},
+			  {"println(7/2)","3" + System.lineSeparator()},
+			  {"println(8/2*4)","16" + System.lineSeparator()},
+			  {"println(2+3*3)","11" + System.lineSeparator()},
+			  {"println(9-2*3)","3" + System.lineSeparator()},
 	  };
   }
 
