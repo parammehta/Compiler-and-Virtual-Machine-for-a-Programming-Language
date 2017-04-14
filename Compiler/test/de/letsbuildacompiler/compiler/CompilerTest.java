@@ -3,6 +3,7 @@ package de.letsbuildacompiler.compiler;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.OutputStream;
 import java.io.StringReader;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -20,6 +21,8 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import bsh.commands.dir;
+import de.letsbuildacompiler.compiler.exceptions.UndeclaredVariableException;
+import de.letsbuildacompiler.compiler.exceptions.VariableAlreadyDefinedException;
 
 public class CompilerTest {
   private Path tempDir;
@@ -53,6 +56,42 @@ public class CompilerTest {
 	  Assert.assertEquals(actualOutput, expectedText);
   }
 	
+	@Test(expectedExceptions = VariableAlreadyDefinedException.class,
+			expectedExceptionMessageRegExp = "2:4 variable already defined <x>")
+	public void compilingCode_throwsVariableAlreadyDefienedException_whenDefiningAlreadyDefinedVariable(){
+		// executing...
+		compileAndRun("int x;" + System.lineSeparator() +
+					  "int x;");
+		
+		//evaluation performed by exception
+		
+	}
+	
+	
+	@Test(expectedExceptions = UndeclaredVariableException.class,
+			expectedExceptionMessageRegExp = "1:0 undeclared variable <x>")
+	public void compilingCode_throwsUndeclaredVariableException_ifWritingUndefinedVariable(){
+		// executing...
+		compileAndRun("x = 5;");
+		
+		//evaluation performed by exception
+		
+	}
+	
+	
+	
+	@Test(expectedExceptions = UndeclaredVariableException.class,
+			expectedExceptionMessageRegExp = "1:8 undeclared variable <x>")
+	public void compilingCode_throwsUndeclaredVariableException_ifReadingUndefinedVariable(){
+		// executing...
+		compileAndRun("println(x);");
+		
+		//evaluation performed by exception
+		
+	}
+	
+ 
+	
 	@DataProvider
   public Object[][] provide_code_expectedText(){
 	  return new Object[][]{
@@ -69,6 +108,13 @@ public class CompilerTest {
 			  {"println(8/2*4)","16" + System.lineSeparator()},
 			  {"println(2+3*3)","11" + System.lineSeparator()},
 			  {"println(9-2*3)","3" + System.lineSeparator()},
+			  {"println(8-2*5)","11" + System.lineSeparator()},
+			  
+			  {"int foo; foo = 42; println(foo);","42" + System.lineSeparator()},
+			  {"int foo; foo = 42; println(foo+2);","44" + System.lineSeparator()},
+			  {"int a; int b; a = 2; b=5; println(a+b);","7" + System.lineSeparator()},
+
+
 	  };
   }
 
@@ -77,7 +123,9 @@ private String compileAndRun(String code) throws Exception{
 	ClassFile classfile = new ClassFile();
 	classfile.readJasmin(new StringReader(code), "", false);
 	Path outputPath = tempDir.resolve(classfile.getClassName() + ".class");
-	classfile.write(Files.newOutputStream(outputPath));
+	try(OutputStream output = Files.newOutputStream(outputPath)){
+		classFile.write(output);
+	} 
 	return runJavaClass(tempDir,classfile.getClassName());	
 }
 
