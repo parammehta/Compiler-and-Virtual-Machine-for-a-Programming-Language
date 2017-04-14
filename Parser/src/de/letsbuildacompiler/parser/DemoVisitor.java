@@ -37,6 +37,18 @@ public interface DemoVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitStatement(DemoParser.StatementContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link DemoParser#branch}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitBranch(DemoParser.BranchContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link DemoParser#section}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitSection(DemoParser.SectionContext ctx);
+	/**
 	 * Visit a parse tree produced by the {@code MULTDIV}
 	 * labeled alternative in {@link DemoParser#expression}.
 	 * @param ctx the parse tree

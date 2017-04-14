@@ -12,6 +12,7 @@ import de.letsbuildacompiler.parser.DemoParser.*;
 public class MyVisitor extends DemoBaseVisitor<String> {
 	
 	private Map<String, Integer> variables = new HashMap<>();
+	private int branchCount = 0;
 	
 	@Override
 	public String visitProgram(ProgramContext ctx) {
@@ -97,7 +98,16 @@ public class MyVisitor extends DemoBaseVisitor<String> {
 	
 	@Override
 	public String visitVariable(VariableContext ctx) {
-		return "iload " + variables.get(ctx.varName.getText());
+		/*
+		if (ctx.varName.getText().equals("true")) {
+			return "ifne " + variables.get(ctx.varName.getText());
+		}
+		else {
+			
+		}
+		*/
+			return "iload " + variables.get(ctx.varName.getText());
+		//}
 	}
 	
 	@Override
@@ -132,6 +142,24 @@ public class MyVisitor extends DemoBaseVisitor<String> {
 		variables = oldVariables;
 		
 		return classcode;
+	}
+	
+	@Override
+	public String visitBranch(BranchContext ctx) {
+		String instructions = visit(ctx.condition);
+		String isTrue = visit(ctx.True);
+		String isFalse = visit(ctx.False);
+		int counter = branchCount;
+		branchCount++;
+		
+		return (instructions + "\n"
+				+ "ifne ifTrue" + counter + "\n"
+				+ isFalse + "\n"
+				+ "goto endIf" + counter + "\n"
+				+ "ifTrue" + counter + ":\n"
+				+ isTrue + "\n"
+				+ "endIf" + counter
+				+ ":\n");
 	}
 	
 	@Override

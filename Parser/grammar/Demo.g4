@@ -3,15 +3,23 @@ grammar Demo;
 program
 	: programPiece+ ;
 
-programPiece: statement ';' #StatementPiece
-			| method #MethodPiece
-			;
+programPiece
+	: statement #StatementPiece
+	| method #MethodPiece
+	;
 
 statement
-	: println
-	| varAssignment
-	| assignment
+	: println ';'
+	| varAssignment ';'
+	| assignment ';'
+	| branch
 	;
+	
+branch
+	: 'if' '(' condition=expression ')' True=section 'else' False=section ;
+	
+section
+	: '{' statement* '}' ;
 
 expression
 	: left=expression operator=('*' | '/') right=expression #MULTDIV
@@ -21,7 +29,7 @@ expression
 	| methodCall #MethodExp
 	;
 	
-assignment: varName=NAME '=' expr=expression;
+assignment: varName=NAME '=' expr=expression ;
 
 varAssignment
 	: 'int' varName=NAME;
@@ -32,7 +40,7 @@ println
 method
 	: 'int' methName=NAME '(' ')' '{' statements=statementList 'return' returnVal=expression ';' '}' ;
 	
-statementList: (statement ';')* ;
+statementList: statement* ;
 
 methodCall
 	: methName=NAME '(' ')' ;

@@ -15,7 +15,6 @@ INDEX VERSION 1.127+/home/luis/SER502-Spring2017-Team31/.metadata/.plugins/org.e
 423297968.index
 1878580055.index
 742522455.index
-2373409194.index
 1932949083.index
 2630498905.index
 3261737188.index
