@@ -17,12 +17,25 @@ public interface DemoVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitProgram(DemoParser.ProgramContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code PLUS}
+	 * Visit a parse tree produced by {@link DemoParser#statement}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitStatement(DemoParser.StatementContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code MULTDIV}
 	 * labeled alternative in {@link DemoParser#expression}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitPLUS(DemoParser.PLUSContext ctx);
+	T visitMULTDIV(DemoParser.MULTDIVContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code Variable}
+	 * labeled alternative in {@link DemoParser#expression}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitVariable(DemoParser.VariableContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code Number}
 	 * labeled alternative in {@link DemoParser#expression}.
@@ -31,26 +44,24 @@ public interface DemoVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitNumber(DemoParser.NumberContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code MINUS}
+	 * Visit a parse tree produced by the {@code PLUSMINUS}
 	 * labeled alternative in {@link DemoParser#expression}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitMINUS(DemoParser.MINUSContext ctx);
+	T visitPLUSMINUS(DemoParser.PLUSMINUSContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code MULT}
-	 * labeled alternative in {@link DemoParser#expression}.
+	 * Visit a parse tree produced by {@link DemoParser#assignment}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitMULT(DemoParser.MULTContext ctx);
+	T visitAssignment(DemoParser.AssignmentContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code DIV}
-	 * labeled alternative in {@link DemoParser#expression}.
+	 * Visit a parse tree produced by {@link DemoParser#varAssignment}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitDIV(DemoParser.DIVContext ctx);
+	T visitVarAssignment(DemoParser.VarAssignmentContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link DemoParser#println}.
 	 * @param ctx the parse tree

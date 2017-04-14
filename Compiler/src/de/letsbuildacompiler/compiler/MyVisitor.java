@@ -1,10 +1,15 @@
 package de.letsbuildacompiler.compiler;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import de.letsbuildacompiler.parser.DemoBaseVisitor;
 import de.letsbuildacompiler.parser.DemoParser.*;
 
 
 public class MyVisitor extends DemoBaseVisitor<String> {
+	
+	private Map<String, Integer> variables = new HashMap<>();
 	
 	@Override
 	public String visitPrintln(PrintlnContext ctx) {
@@ -14,32 +19,56 @@ public class MyVisitor extends DemoBaseVisitor<String> {
 	}
 	
 	@Override
-	public String visitPLUS(PLUSContext ctx) {
-		return visitChildren(ctx) + "\n" +   
-				"iadd";
+	public String visitPLUSMINUS(PLUSMINUSContext ctx) {
+		if (ctx.operator.getText().equals("+")) {
+			return visitChildren(ctx) + "\n" +   
+					"iadd";
+		}
+		else if (ctx.operator.getText().equals("-")) {
+			return visitChildren(ctx) + "\n" +   
+					"isub";
+		}
+		else {
+			return "";
+		}
 	}
 	
 	@Override
-	public String visitMINUS(MINUSContext ctx) {
-		return visitChildren(ctx) + "\n" +   
-				"isub";
-	}
-	
-	@Override
-	public String visitDIV(DIVContext ctx) {
-		return visitChildren(ctx) + "\n" +   
-				"idiv";
-	}
-	
-	@Override
-	public String visitMULT(MULTContext ctx) {
-		return visitChildren(ctx) + "\n" +   
-				"imul";
+	public String visitMULTDIV(MULTDIVContext ctx) {
+		if (ctx.operator.getText().equals("*")) {
+			return visitChildren(ctx) + "\n" +   
+					"imul";
+		}
+		else if (ctx.operator.getText().equals("/")) {
+			return visitChildren(ctx) + "\n" +   
+					"idiv";
+		}
+		else {
+			return "";
+		}
 	}
 	
 	@Override
 	public String visitNumber(NumberContext ctx) {
 		return "ldc " + ctx.num.getText();
+	}
+	
+
+	@Override
+	public String visitVarAssignment(VarAssignmentContext ctx) {
+		variables.put(ctx.varName.getText(), variables.size());
+		return "";
+	}
+	
+	@Override
+	public String visitAssignment(AssignmentContext ctx) {
+		return visit(ctx.expr) + "\n" +
+		"istore " + variables.get(ctx.varName.getText());
+	}
+	
+	@Override
+	public String visitVariable(VariableContext ctx) {
+		return "iload " + variables.get(ctx.varName.getText());
 	}
 	
 	@Override
