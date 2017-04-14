@@ -17,6 +17,20 @@ public interface DemoVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitProgram(DemoParser.ProgramContext ctx);
 	/**
+	 * Visit a parse tree produced by the {@code StatementPiece}
+	 * labeled alternative in {@link DemoParser#programPiece}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitStatementPiece(DemoParser.StatementPieceContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code MethodPiece}
+	 * labeled alternative in {@link DemoParser#programPiece}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitMethodPiece(DemoParser.MethodPieceContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link DemoParser#statement}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
@@ -51,6 +65,13 @@ public interface DemoVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitPLUSMINUS(DemoParser.PLUSMINUSContext ctx);
 	/**
+	 * Visit a parse tree produced by the {@code MethodExp}
+	 * labeled alternative in {@link DemoParser#expression}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitMethodExp(DemoParser.MethodExpContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link DemoParser#assignment}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
@@ -68,4 +89,22 @@ public interface DemoVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitPrintln(DemoParser.PrintlnContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link DemoParser#method}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitMethod(DemoParser.MethodContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link DemoParser#statementList}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitStatementList(DemoParser.StatementListContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link DemoParser#methodCall}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitMethodCall(DemoParser.MethodCallContext ctx);
 }

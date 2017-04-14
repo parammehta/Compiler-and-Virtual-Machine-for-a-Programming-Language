@@ -1,5 +1,1 @@
-int a;
-int b;
-a = 3;
-b = 5;
-println(a+b);
+int example() {int i; i = 1; return i;} int i; i = 63; println(example()); println(i);

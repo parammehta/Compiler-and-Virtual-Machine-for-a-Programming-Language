@@ -1,0 +1,5 @@
+String asdf;
+String funny;
+asdf = "This is ";
+funny = " a joke";
+println(asdf+funny);

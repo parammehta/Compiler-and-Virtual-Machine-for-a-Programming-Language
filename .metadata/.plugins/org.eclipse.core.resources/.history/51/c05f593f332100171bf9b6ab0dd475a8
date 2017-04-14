@@ -1,0 +1,8 @@
+int generateRandom() {
+	int i;
+	i = 4;
+	return i;
+}
+int i;
+i = 42;
+println(generateRandom());

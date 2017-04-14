@@ -3,6 +3,8 @@ package de.letsbuildacompiler.compiler;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.antlr.v4.runtime.tree.ParseTree;
+
 import de.letsbuildacompiler.parser.DemoBaseVisitor;
 import de.letsbuildacompiler.parser.DemoParser.*;
 
@@ -10,6 +12,33 @@ import de.letsbuildacompiler.parser.DemoParser.*;
 public class MyVisitor extends DemoBaseVisitor<String> {
 	
 	private Map<String, Integer> variables = new HashMap<>();
+	
+	@Override
+	public String visitProgram(ProgramContext ctx) {
+		String statements = "";
+		String methods = "";
+		for(int i = 0; i < ctx.getChildCount(); i++) {
+			ParseTree child = ctx.getChild(i);
+			String codepiece = visit(child);
+			if (child instanceof StatementPieceContext) {
+				statements += codepiece + "\n";
+			}
+			else {
+				methods += codepiece + "\n";
+			}
+		}
+		return (methods + "\n" +
+		".method public static main([Ljava/lang/String;)V\n" +
+		" .limit stack 100\n" +
+		" .limit locals 100\n" +
+
+		" \n" +
+		statements + "\n" +
+		" return\n"+ 
+		" \n" +
+	
+		".end method");
+	}
 	
 	@Override
 	public String visitPrintln(PrintlnContext ctx) {
@@ -69,6 +98,40 @@ public class MyVisitor extends DemoBaseVisitor<String> {
 	@Override
 	public String visitVariable(VariableContext ctx) {
 		return "iload " + variables.get(ctx.varName.getText());
+	}
+	
+	@Override
+	public String visitMethodCall(MethodCallContext ctx) {
+		return "invokestatic HelloWorld/" + ctx.methName.getText() + "()I\n";
+	}
+	
+	@Override
+	public String visitMethod(MethodContext ctx) {
+		
+		//Scope
+		Map<String, Integer> oldVariables = variables;
+		variables = new HashMap<>();
+		
+		String instructions = visit(ctx.statements);
+		String classcode = ".method public static " + ctx.methName.getText() + "()I\n"
+				+ ".limit locals 100\n"
+				+ ".limit stack 100\n";
+		
+		if (instructions == null) {
+			classcode += "";
+		}
+		else {
+			classcode += instructions + "\n";
+		}
+		
+		classcode += visit(ctx.returnVal)
+					+ "\nireturn\n"
+					+ ".end method";
+		
+		//Return scope
+		variables = oldVariables;
+		
+		return classcode;
 	}
 	
 	@Override
