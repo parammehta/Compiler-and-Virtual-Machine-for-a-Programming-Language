@@ -1,1 +1,0 @@
-int example() {int i; i = 1; return i;} int i; i = 63; println(example()); println(i);

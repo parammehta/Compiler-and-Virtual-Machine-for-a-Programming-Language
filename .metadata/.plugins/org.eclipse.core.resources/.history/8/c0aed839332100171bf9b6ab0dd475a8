@@ -1,6 +1,0 @@
-int generateRandom() {
-	int i;
-	i = 4;
-	return i;
-}
-println(generateRandom());
