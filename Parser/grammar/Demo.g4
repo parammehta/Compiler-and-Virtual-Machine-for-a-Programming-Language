@@ -1,18 +1,52 @@
 grammar Demo;
 
 program
-	: (println ';')+;
+	: programPiece+ ;
+
+programPiece
+	: statement #StatementPiece
+	| method #MethodPiece
+	;
+
+statement
+	: println ';'
+	| varAssignment ';'
+	| assignment ';'
+	| branch
+	;
+	
+branch
+	: 'if' '(' condition=expression ')' True=section 'else' False=section ;
+	
+section
+	: '{' statement* '}' ;
 
 expression
-	: left=expression '/' right=expression #DIV
-	| left=expression '*' right=expression #MULT
-	| left=expression '+' right=expression #PLUS
-	| left=expression '-' right=expression #MINUS
+	: left=expression operator=('*' | '/') right=expression #MULTDIV
+	| left=expression operator=('+' | '-') right=expression #PLUSMINUS
 	| num=NUM #Number
+	| varName=NAME #Variable
+	| methodCall #MethodExp
 	;
+	
+assignment: varName=NAME '=' expr=expression ;
+
+varAssignment
+	: 'int' varName=NAME;
 
 println
 	: 'println(' argument=expression ')' ;
+
+method
+	: 'int' methName=NAME '(' ')' '{' statements=statementList 'return' returnVal=expression ';' '}' ;
+	
+statementList: statement* ;
+
+methodCall
+	: methName=NAME '(' ')' ;
+
+NAME
+	: [a-zA-Z][a-zA-Z0-9]*;
 
 NUM
 	: [0-9]+;

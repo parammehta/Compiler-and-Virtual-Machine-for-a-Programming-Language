@@ -19,4 +19,7 @@
 <fullyQualifiedTypeName name="java.lang.String"/>
 <fullyQualifiedTypeName name="de.letsbuildacompiler.compiler.Main"/>
 <fullyQualifiedTypeName name="org.antlr.v4.runtime.ANTLRInputStream"/>
+<fullyQualifiedTypeName name="java.util.HashMap"/>
+<fullyQualifiedTypeName name="java.util.Map"/>
+<fullyQualifiedTypeName name="org.antlr.runtime.tree.ParseTree"/>
 </qualifiedTypeNameHistroy>
