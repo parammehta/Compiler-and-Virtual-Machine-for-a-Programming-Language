@@ -1,0 +1,23 @@
+// Assignment
+int(x)= 10;
+boolean(y) = TRUE;
+
+print(x);
+println(y);
+
+//Conditional
+boolean(x) = TRUE;
+boolean(y) = FALSE;
+If ( a == TRUE && b == FALSE ) 
+    - then - print(x)    
+else print(y);
+
+// While loop
+WHILE (num < 5) {
+    num = num * 2;
+}
+print(while)
+
+//Basic Operations
+int a = 10 + 5 * 3;
+print(a)
