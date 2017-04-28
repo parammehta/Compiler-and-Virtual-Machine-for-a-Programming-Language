@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Extract local variable &apos;Process&apos; from expression &apos;Runtime.getRuntime().exec(new String[]{&quot;java&quot;,&quot;-cp&quot;,dir.toString(),className})&apos;&#x0A;- Original project: &apos;Compiler&apos;&#x0A;- Variable name: &apos;Process&apos;&#x0A;- Destination method: &apos;de.letsbuildacompiler.compiler.CompilerTest.runJavaClass()&apos;&#x0A;- Variable expression: &apos;Runtime.getRuntime().exec(new String[]{&quot;java&quot;,&quot;-cp&quot;,dir.toString(),className})&apos;&#x0A;- Replace occurrences of expression with variable" description="Extract local variable &apos;Process&apos;" final="false" id="org.eclipse.jdt.ui.extract.temp" input="/test&lt;de.letsbuildacompiler.compiler{CompilerTest.java" name="Process" replace="true" selection="961 79" stamp="1492014885045" version="1.0"/>
-</session>
