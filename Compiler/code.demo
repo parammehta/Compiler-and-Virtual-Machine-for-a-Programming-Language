@@ -2,16 +2,6 @@ int a;
 int b;
 int c;
 a = 4;
-b = 3;
-c = a + b * b / b - a;
-
-int example() {
-	if(c>5) {
-		println(1);
-	}
-	else {
-		println(0);
-	}
-}
-
-example();
+b = 16;
+c = a + b * b / a - b;
+println(c);
