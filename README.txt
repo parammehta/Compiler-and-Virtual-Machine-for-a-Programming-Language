@@ -28,10 +28,10 @@ Note that the URL's are update sites as well, not direct download links."
 2) Open the project in Eclipse
 3) Open Help -> Eclipse Marketplace
 4) Go to http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=1549 and drag the install button of TestNG for Eclipse to the Help -> Eclipse Marketplace
-5) Go to CompilerTest.java
+5) Go to Compiler -> test -> de -> letsbuildacompiler -> compiler - > CompilerTest.java
 6) Click on the error part against @BeforeMethod and click on Add TestNG library to solve all the errors
-7) Go to Main.java and check for the path of the file you are passing to check output
-8) Change the paths to the code files you want to test (Example: add.apla, sub.apla, functions.apla)
+7) Go to Compiler -> src -> de -> letsbuildacompiler -> compiler -> Main.java and check for the path of the input file (ANTLRInputStream input = new ANTLRFileStream("INPUT_FILE_PATH");) you are passing to check output
+8) Change the paths to the code files you want to test by the one's given under Sample Programs (Example: add.apla, sub.apla, functions.apla)
 9) Run the Main.java
 10) Press 1 --> Intermediate 2 --> Output
 11) Check rigorously for all sample programs
