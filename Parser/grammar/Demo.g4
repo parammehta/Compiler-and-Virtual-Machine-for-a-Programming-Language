@@ -24,6 +24,7 @@ section
 expression
 	: left=expression operator=('*' | '/') right=expression #MULTDIV
 	| left=expression operator=('+' | '-') right=expression #PLUSMINUS
+	| left=expression operator=('<' | '<=' | '>' | '>=') right=expression #Relational
 	| num=NUM #Number
 	| varName=NAME #Variable
 	| methodCall #MethodExp

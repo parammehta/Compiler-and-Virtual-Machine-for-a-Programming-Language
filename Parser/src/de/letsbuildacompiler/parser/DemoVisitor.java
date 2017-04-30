@@ -70,6 +70,13 @@ public interface DemoVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitNumber(DemoParser.NumberContext ctx);
 	/**
+	 * Visit a parse tree produced by the {@code Relational}
+	 * labeled alternative in {@link DemoParser#expression}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitRelational(DemoParser.RelationalContext ctx);
+	/**
 	 * Visit a parse tree produced by the {@code PLUSMINUS}
 	 * labeled alternative in {@link DemoParser#expression}.
 	 * @param ctx the parse tree

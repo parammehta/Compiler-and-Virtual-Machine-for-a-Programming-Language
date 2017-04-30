@@ -13,6 +13,7 @@ public class MyVisitor extends DemoBaseVisitor<String> {
 	
 	private Map<String, Integer> variables = new HashMap<>();
 	private int branchCount = 0;
+	private int countCompare = 0;
 	
 	@Override
 	public String visitProgram(ProgramContext ctx) {
@@ -76,6 +77,38 @@ public class MyVisitor extends DemoBaseVisitor<String> {
 		else {
 			return "";
 		}
+	}
+	
+	@Override
+	public String visitRelational(RelationalContext ctx) {
+		
+		int tempCount = countCompare;
+		++countCompare;
+		
+		String goToInstruct;
+		
+		if(ctx.operator.getText().equals("<")) {
+			goToInstruct = "if_icmplt";
+		}
+		else if (ctx.operator.getText().equals("<=")) {
+			goToInstruct =  "if_icmple";
+		}
+		else if (ctx.operator.getText().equals(">")) {
+			goToInstruct =  "if_icmpgt";
+		}
+		else if (ctx.operator.getText().equals(">=")) {
+			goToInstruct =  "if_icmpge";
+		}
+		else {
+			throw new IllegalArgumentException("Unknown operator: " + ctx.operator.getText());
+		}
+		
+		return visitChildren(ctx) + "\n" + goToInstruct + " onTrue" + tempCount + "\n"
+					+ "ldc 0\n"
+					+ "goto onFalse" + tempCount + "\n"
+					+ "onTrue" + tempCount + ":\n"
+					+ "ldc 1\n"
+					+ "onFalse" + tempCount + ":";
 	}
 	
 	@Override

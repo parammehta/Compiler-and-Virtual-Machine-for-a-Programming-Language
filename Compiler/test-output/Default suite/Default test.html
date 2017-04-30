@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Default test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>18/0/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>26/0/0</td>
 </tr><tr>
-<td>Started on:</td><td>Sun Apr 23 18:54:02 MST 2017</td>
+<td>Started on:</td><td>Sat Apr 29 19:05:53 MST 2017</td>
 </tr>
-<tr><td>Total time:</td><td>20 seconds (20110 ms)</td>
+<tr><td>Total time:</td><td>6 seconds (6718 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -75,114 +75,170 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='de.letsbuildacompiler.compiler.CompilerTest.runningCodeoutputsExpectedText()'><b>runningCodeoutputsExpectedText</b><br>Test class: de.letsbuildacompiler.compiler.CompilerTest<br>Parameters: println(1+2);, 3
-</td>
-<td></td>
-<td>2</td>
-<td>de.letsbuildacompiler.compiler.CompilerTest@5ae9a829</td></tr>
-<tr>
-<td title='de.letsbuildacompiler.compiler.CompilerTest.runningCodeoutputsExpectedText()'><b>runningCodeoutputsExpectedText</b><br>Test class: de.letsbuildacompiler.compiler.CompilerTest<br>Parameters: println(1+2+53);, 56
+<td title='de.letsbuildacompiler.compiler.CompilerTest.runningCodeoutputsExpectedText()'><b>runningCodeoutputsExpectedText</b><br>Test class: de.letsbuildacompiler.compiler.CompilerTest<br>Parameters: plus, println(1+2);, 3
 </td>
 <td></td>
 <td>0</td>
 <td>de.letsbuildacompiler.compiler.CompilerTest@5ae9a829</td></tr>
 <tr>
-<td title='de.letsbuildacompiler.compiler.CompilerTest.runningCodeoutputsExpectedText()'><b>runningCodeoutputsExpectedText</b><br>Test class: de.letsbuildacompiler.compiler.CompilerTest<br>Parameters: println(1); println(2);, 1
+<td title='de.letsbuildacompiler.compiler.CompilerTest.runningCodeoutputsExpectedText()'><b>runningCodeoutputsExpectedText</b><br>Test class: de.letsbuildacompiler.compiler.CompilerTest<br>Parameters: chained plus, println(1+2+53);, 56
+</td>
+<td></td>
+<td>0</td>
+<td>de.letsbuildacompiler.compiler.CompilerTest@5ae9a829</td></tr>
+<tr>
+<td title='de.letsbuildacompiler.compiler.CompilerTest.runningCodeoutputsExpectedText()'><b>runningCodeoutputsExpectedText</b><br>Test class: de.letsbuildacompiler.compiler.CompilerTest<br>Parameters: multiple statements, println(1); println(2);, 1
 2
 </td>
 <td></td>
 <td>0</td>
 <td>de.letsbuildacompiler.compiler.CompilerTest@5ae9a829</td></tr>
 <tr>
-<td title='de.letsbuildacompiler.compiler.CompilerTest.runningCodeoutputsExpectedText()'><b>runningCodeoutputsExpectedText</b><br>Test class: de.letsbuildacompiler.compiler.CompilerTest<br>Parameters: println(3-2);, 1
+<td title='de.letsbuildacompiler.compiler.CompilerTest.runningCodeoutputsExpectedText()'><b>runningCodeoutputsExpectedText</b><br>Test class: de.letsbuildacompiler.compiler.CompilerTest<br>Parameters: minus, println(3-2);, 1
 </td>
 <td></td>
 <td>0</td>
 <td>de.letsbuildacompiler.compiler.CompilerTest@5ae9a829</td></tr>
 <tr>
-<td title='de.letsbuildacompiler.compiler.CompilerTest.runningCodeoutputsExpectedText()'><b>runningCodeoutputsExpectedText</b><br>Test class: de.letsbuildacompiler.compiler.CompilerTest<br>Parameters: println(2*3);, 6
+<td title='de.letsbuildacompiler.compiler.CompilerTest.runningCodeoutputsExpectedText()'><b>runningCodeoutputsExpectedText</b><br>Test class: de.letsbuildacompiler.compiler.CompilerTest<br>Parameters: times, println(2*3);, 6
 </td>
 <td></td>
 <td>0</td>
 <td>de.letsbuildacompiler.compiler.CompilerTest@5ae9a829</td></tr>
 <tr>
-<td title='de.letsbuildacompiler.compiler.CompilerTest.runningCodeoutputsExpectedText()'><b>runningCodeoutputsExpectedText</b><br>Test class: de.letsbuildacompiler.compiler.CompilerTest<br>Parameters: println(8/2);, 4
+<td title='de.letsbuildacompiler.compiler.CompilerTest.runningCodeoutputsExpectedText()'><b>runningCodeoutputsExpectedText</b><br>Test class: de.letsbuildacompiler.compiler.CompilerTest<br>Parameters: divide, println(8/2);, 4
 </td>
 <td></td>
 <td>0</td>
 <td>de.letsbuildacompiler.compiler.CompilerTest@5ae9a829</td></tr>
 <tr>
-<td title='de.letsbuildacompiler.compiler.CompilerTest.runningCodeoutputsExpectedText()'><b>runningCodeoutputsExpectedText</b><br>Test class: de.letsbuildacompiler.compiler.CompilerTest<br>Parameters: println(9-2*3);, 3
+<td title='de.letsbuildacompiler.compiler.CompilerTest.runningCodeoutputsExpectedText()'><b>runningCodeoutputsExpectedText</b><br>Test class: de.letsbuildacompiler.compiler.CompilerTest<br>Parameters: divide and truncate, println(9-2*3);, 3
 </td>
 <td></td>
 <td>0</td>
 <td>de.letsbuildacompiler.compiler.CompilerTest@5ae9a829</td></tr>
 <tr>
-<td title='de.letsbuildacompiler.compiler.CompilerTest.runningCodeoutputsExpectedText()'><b>runningCodeoutputsExpectedText</b><br>Test class: de.letsbuildacompiler.compiler.CompilerTest<br>Parameters: println(8/2*4);, 16
+<td title='de.letsbuildacompiler.compiler.CompilerTest.runningCodeoutputsExpectedText()'><b>runningCodeoutputsExpectedText</b><br>Test class: de.letsbuildacompiler.compiler.CompilerTest<br>Parameters: precedence times and divide, println(8/2*4);, 16
 </td>
 <td></td>
 <td>0</td>
 <td>de.letsbuildacompiler.compiler.CompilerTest@5ae9a829</td></tr>
 <tr>
-<td title='de.letsbuildacompiler.compiler.CompilerTest.runningCodeoutputsExpectedText()'><b>runningCodeoutputsExpectedText</b><br>Test class: de.letsbuildacompiler.compiler.CompilerTest<br>Parameters: println(2+3*3);, 11
+<td title='de.letsbuildacompiler.compiler.CompilerTest.runningCodeoutputsExpectedText()'><b>runningCodeoutputsExpectedText</b><br>Test class: de.letsbuildacompiler.compiler.CompilerTest<br>Parameters: precedence plus and times, println(2+3*3);, 11
 </td>
 <td></td>
-<td>1</td>
+<td>0</td>
 <td>de.letsbuildacompiler.compiler.CompilerTest@5ae9a829</td></tr>
 <tr>
-<td title='de.letsbuildacompiler.compiler.CompilerTest.runningCodeoutputsExpectedText()'><b>runningCodeoutputsExpectedText</b><br>Test class: de.letsbuildacompiler.compiler.CompilerTest<br>Parameters: println(18-2+7);, 23
+<td title='de.letsbuildacompiler.compiler.CompilerTest.runningCodeoutputsExpectedText()'><b>runningCodeoutputsExpectedText</b><br>Test class: de.letsbuildacompiler.compiler.CompilerTest<br>Parameters: precedence minus and times, println(18-2+7);, 23
 </td>
 <td></td>
-<td>1</td>
+<td>0</td>
 <td>de.letsbuildacompiler.compiler.CompilerTest@5ae9a829</td></tr>
 <tr>
-<td title='de.letsbuildacompiler.compiler.CompilerTest.runningCodeoutputsExpectedText()'><b>runningCodeoutputsExpectedText</b><br>Test class: de.letsbuildacompiler.compiler.CompilerTest<br>Parameters: int x; x = 33; println(x);, 33
+<td title='de.letsbuildacompiler.compiler.CompilerTest.runningCodeoutputsExpectedText()'><b>runningCodeoutputsExpectedText</b><br>Test class: de.letsbuildacompiler.compiler.CompilerTest<br>Parameters: print, int x; x = 33; println(x);, 33
 </td>
 <td></td>
-<td>1</td>
+<td>0</td>
 <td>de.letsbuildacompiler.compiler.CompilerTest@5ae9a829</td></tr>
 <tr>
-<td title='de.letsbuildacompiler.compiler.CompilerTest.runningCodeoutputsExpectedText()'><b>runningCodeoutputsExpectedText</b><br>Test class: de.letsbuildacompiler.compiler.CompilerTest<br>Parameters: int y; y = 8843; println(y+2);, 8845
+<td title='de.letsbuildacompiler.compiler.CompilerTest.runningCodeoutputsExpectedText()'><b>runningCodeoutputsExpectedText</b><br>Test class: de.letsbuildacompiler.compiler.CompilerTest<br>Parameters: print with add, int y; y = 8843; println(y+2);, 8845
 </td>
 <td></td>
-<td>1</td>
+<td>0</td>
 <td>de.letsbuildacompiler.compiler.CompilerTest@5ae9a829</td></tr>
 <tr>
-<td title='de.letsbuildacompiler.compiler.CompilerTest.runningCodeoutputsExpectedText()'><b>runningCodeoutputsExpectedText</b><br>Test class: de.letsbuildacompiler.compiler.CompilerTest<br>Parameters: int a; int b; a = 3; b = 5; println(a+b);, 8
+<td title='de.letsbuildacompiler.compiler.CompilerTest.runningCodeoutputsExpectedText()'><b>runningCodeoutputsExpectedText</b><br>Test class: de.letsbuildacompiler.compiler.CompilerTest<br>Parameters: print add, int a; int b; a = 3; b = 5; println(a+b);, 8
 </td>
 <td></td>
-<td>1</td>
+<td>0</td>
 <td>de.letsbuildacompiler.compiler.CompilerTest@5ae9a829</td></tr>
 <tr>
-<td title='de.letsbuildacompiler.compiler.CompilerTest.runningCodeoutputsExpectedText()'><b>runningCodeoutputsExpectedText</b><br>Test class: de.letsbuildacompiler.compiler.CompilerTest<br>Parameters: int example() {return 1;} println(example());, 1
+<td title='de.letsbuildacompiler.compiler.CompilerTest.runningCodeoutputsExpectedText()'><b>runningCodeoutputsExpectedText</b><br>Test class: de.letsbuildacompiler.compiler.CompilerTest<br>Parameters: return only, int example() {return 1;} println(example());, 1
 </td>
 <td></td>
-<td>1</td>
+<td>0</td>
 <td>de.letsbuildacompiler.compiler.CompilerTest@5ae9a829</td></tr>
 <tr>
-<td title='de.letsbuildacompiler.compiler.CompilerTest.runningCodeoutputsExpectedText()'><b>runningCodeoutputsExpectedText</b><br>Test class: de.letsbuildacompiler.compiler.CompilerTest<br>Parameters: int example() {int i; i = 4; return i;} println(example());, 4
+<td title='de.letsbuildacompiler.compiler.CompilerTest.runningCodeoutputsExpectedText()'><b>runningCodeoutputsExpectedText</b><br>Test class: de.letsbuildacompiler.compiler.CompilerTest<br>Parameters: return only function, int example() {int i; i = 4; return i;} println(example());, 4
 </td>
 <td></td>
-<td>1</td>
+<td>0</td>
 <td>de.letsbuildacompiler.compiler.CompilerTest@5ae9a829</td></tr>
 <tr>
-<td title='de.letsbuildacompiler.compiler.CompilerTest.runningCodeoutputsExpectedText()'><b>runningCodeoutputsExpectedText</b><br>Test class: de.letsbuildacompiler.compiler.CompilerTest<br>Parameters: int example() {int i; i = 1; return i;} int i; i = 63; println(example()); println(i);, 1
+<td title='de.letsbuildacompiler.compiler.CompilerTest.runningCodeoutputsExpectedText()'><b>runningCodeoutputsExpectedText</b><br>Test class: de.letsbuildacompiler.compiler.CompilerTest<br>Parameters: function within function, int example() {int i; i = 1; return i;} int i; i = 63; println(example()); println(i);, 1
 63
 </td>
 <td></td>
-<td>1</td>
+<td>0</td>
 <td>de.letsbuildacompiler.compiler.CompilerTest@5ae9a829</td></tr>
 <tr>
-<td title='de.letsbuildacompiler.compiler.CompilerTest.runningCodeoutputsExpectedText()'><b>runningCodeoutputsExpectedText</b><br>Test class: de.letsbuildacompiler.compiler.CompilerTest<br>Parameters: if (0) {println(42);} else {println(81);}, 81
+<td title='de.letsbuildacompiler.compiler.CompilerTest.runningCodeoutputsExpectedText()'><b>runningCodeoutputsExpectedText</b><br>Test class: de.letsbuildacompiler.compiler.CompilerTest<br>Parameters: branch/if_int_false, if (0) {
+	println(81);
+} else {
+	println(42);
+}, 42
 </td>
 <td></td>
-<td>1</td>
+<td>0</td>
 <td>de.letsbuildacompiler.compiler.CompilerTest@5ae9a829</td></tr>
 <tr>
-<td title='de.letsbuildacompiler.compiler.CompilerTest.runningCodeoutputsExpectedText()'><b>runningCodeoutputsExpectedText</b><br>Test class: de.letsbuildacompiler.compiler.CompilerTest<br>Parameters: if (1) {println(42);} else {println(81);}, 42
+<td title='de.letsbuildacompiler.compiler.CompilerTest.runningCodeoutputsExpectedText()'><b>runningCodeoutputsExpectedText</b><br>Test class: de.letsbuildacompiler.compiler.CompilerTest<br>Parameters: branch/if_int_true, if (1) {
+	println(81);
+} else {
+	println(42);
+}, 81
 </td>
 <td></td>
-<td>1</td>
+<td>0</td>
+<td>de.letsbuildacompiler.compiler.CompilerTest@5ae9a829</td></tr>
+<tr>
+<td title='de.letsbuildacompiler.compiler.CompilerTest.runningCodeoutputsExpectedText()'><b>runningCodeoutputsExpectedText</b><br>Test class: de.letsbuildacompiler.compiler.CompilerTest<br>Parameters: lower than true, println(1 < 2);, 1
+</td>
+<td></td>
+<td>0</td>
+<td>de.letsbuildacompiler.compiler.CompilerTest@5ae9a829</td></tr>
+<tr>
+<td title='de.letsbuildacompiler.compiler.CompilerTest.runningCodeoutputsExpectedText()'><b>runningCodeoutputsExpectedText</b><br>Test class: de.letsbuildacompiler.compiler.CompilerTest<br>Parameters: lower than false, println(2 < 2);, 0
+</td>
+<td></td>
+<td>0</td>
+<td>de.letsbuildacompiler.compiler.CompilerTest@5ae9a829</td></tr>
+<tr>
+<td title='de.letsbuildacompiler.compiler.CompilerTest.runningCodeoutputsExpectedText()'><b>runningCodeoutputsExpectedText</b><br>Test class: de.letsbuildacompiler.compiler.CompilerTest<br>Parameters: lower than or equal true, println(2 <= 2);, 1
+</td>
+<td></td>
+<td>0</td>
+<td>de.letsbuildacompiler.compiler.CompilerTest@5ae9a829</td></tr>
+<tr>
+<td title='de.letsbuildacompiler.compiler.CompilerTest.runningCodeoutputsExpectedText()'><b>runningCodeoutputsExpectedText</b><br>Test class: de.letsbuildacompiler.compiler.CompilerTest<br>Parameters: lower than or equal false, println(3 <= 2);, 0
+</td>
+<td></td>
+<td>0</td>
+<td>de.letsbuildacompiler.compiler.CompilerTest@5ae9a829</td></tr>
+<tr>
+<td title='de.letsbuildacompiler.compiler.CompilerTest.runningCodeoutputsExpectedText()'><b>runningCodeoutputsExpectedText</b><br>Test class: de.letsbuildacompiler.compiler.CompilerTest<br>Parameters: greater than true, println(3 > 2);, 1
+</td>
+<td></td>
+<td>0</td>
+<td>de.letsbuildacompiler.compiler.CompilerTest@5ae9a829</td></tr>
+<tr>
+<td title='de.letsbuildacompiler.compiler.CompilerTest.runningCodeoutputsExpectedText()'><b>runningCodeoutputsExpectedText</b><br>Test class: de.letsbuildacompiler.compiler.CompilerTest<br>Parameters: greater than false, println(2 > 2);, 0
+</td>
+<td></td>
+<td>0</td>
+<td>de.letsbuildacompiler.compiler.CompilerTest@5ae9a829</td></tr>
+<tr>
+<td title='de.letsbuildacompiler.compiler.CompilerTest.runningCodeoutputsExpectedText()'><b>runningCodeoutputsExpectedText</b><br>Test class: de.letsbuildacompiler.compiler.CompilerTest<br>Parameters: greater than or equal true, println(2 >= 2);, 1
+</td>
+<td></td>
+<td>0</td>
+<td>de.letsbuildacompiler.compiler.CompilerTest@5ae9a829</td></tr>
+<tr>
+<td title='de.letsbuildacompiler.compiler.CompilerTest.runningCodeoutputsExpectedText()'><b>runningCodeoutputsExpectedText</b><br>Test class: de.letsbuildacompiler.compiler.CompilerTest<br>Parameters: greater than or equal false, println(1 >= 2);, 0
+</td>
+<td></td>
+<td>0</td>
 <td>de.letsbuildacompiler.compiler.CompilerTest@5ae9a829</td></tr>
 </table><p>
 </body>

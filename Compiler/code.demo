@@ -1,7 +1,17 @@
 int a;
 int b;
 int c;
-a=10;
-b=5;
-c=a+b;
-println(c);
+a = 4;
+b = 3;
+c = a + b * b / b - a;
+
+int example() {
+	if(c>5) {
+		println(1);
+	}
+	else {
+		println(0);
+	}
+}
+
+example();

@@ -43,8 +43,8 @@ public class CompilerTest {
   	}
   
   	@Test(dataProvider = "provide_code_expectedText")
-	public void runningCodeoutputsExpectedText(String code, String expectedText) throws Exception {
-		// executing...
+	public void runningCodeoutputsExpectedText(String description, String code, String expectedText) throws Exception {
+  		// executing...
 		String actualOutput = compileAndRun(code);
 		  
 		//evaluating...
@@ -52,34 +52,58 @@ public class CompilerTest {
 	}
 	
 	@DataProvider
-	public Object[][] provide_code_expectedText() {
+	public Object[][] provide_code_expectedText() throws Exception {
 		return new Object[][] {
-			  {"println(1+2);","3" + System.lineSeparator()},
-			  {"println(1+2+53);","56" + System.lineSeparator()},
-			  {"println(1); println(2);",
+			  {"plus","println(1+2);","3" + System.lineSeparator()},
+			  {"chained plus","println(1+2+53);","56" + System.lineSeparator()},
+			  {"multiple statements","println(1); println(2);",
 				  "1" + System.lineSeparator() +
 				  "2" + System.lineSeparator(),
 			  },
-			  {"println(3-2);","1" + System.lineSeparator()},
-			  {"println(2*3);","6" + System.lineSeparator()},
-			  {"println(8/2);","4" + System.lineSeparator()},
-			  {"println(9-2*3);","3" + System.lineSeparator()},
-			  {"println(8/2*4);","16" + System.lineSeparator()},
-			  {"println(2+3*3);","11" + System.lineSeparator()},
-			  {"println(18-2+7);","23" + System.lineSeparator()},
-			  {"int x; x = 33; println(x);", "33" + System.lineSeparator()},
-			  {"int y; y = 8843; println(y+2);","8845" + System.lineSeparator()},
-			  {"int a; int b; a = 3; b = 5; println(a+b);","8" + System.lineSeparator()},
-			  //{"bool x; x = true; println(x);", "true" + System.lineSeparator()},
-			  {"int example() {return 1;} println(example());", "1" + System.lineSeparator()},
-			  {"int example() {int i; i = 4; return i;} println(example());", "4" + System.lineSeparator()},
-			  {"int example() {int i; i = 1; return i;} int i; i = 63; println(example()); println(i);", 
+			  {"minus","println(3-2);","1" + System.lineSeparator()},
+			  {"times","println(2*3);","6" + System.lineSeparator()},
+			  {"divide","println(8/2);","4" + System.lineSeparator()},
+			  {"divide and truncate","println(9-2*3);","3" + System.lineSeparator()},
+			  {"precedence times and divide","println(8/2*4);","16" + System.lineSeparator()},
+			  {"precedence plus and times","println(2+3*3);","11" + System.lineSeparator()},
+			  {"precedence minus and times","println(18-2+7);","23" + System.lineSeparator()},
+			  {"print","int x; x = 33; println(x);", "33" + System.lineSeparator()},
+			  {"print with add","int y; y = 8843; println(y+2);","8845" + System.lineSeparator()},
+			  {"print add","int a; int b; a = 3; b = 5; println(a+b);","8" + System.lineSeparator()},
+			  {"return only","int example() {return 1;} println(example());", "1" + System.lineSeparator()},
+			  {"return only function","int example() {int i; i = 4; return i;} println(example());", "4" + System.lineSeparator()},
+			  {"function within function","int example() {int i; i = 1; return i;} int i; i = 63; println(example()); println(i);", 
 				  "1" + System.lineSeparator() 
 				+ "63" + System.lineSeparator()
 			  },
-			  {"if (0) {println(42);} else {println(81);}", "81" + System.lineSeparator()},
-			  {"if (1) {println(42);} else {println(81);}", "42" + System.lineSeparator()},
+			  example("branch/if_int_false", "42" + System.lineSeparator()),
+			  example("branch/if_int_true", "81" + System.lineSeparator()),
+			  
+			  {"lower than true", "println(1 < 2);", "1" + System.lineSeparator()},
+			  {"lower than false", "println(2 < 2);", "0" + System.lineSeparator()},
+			  
+			  {"lower than or equal true", "println(2 <= 2);", "1" + System.lineSeparator()},
+			  {"lower than or equal false", "println(3 <= 2);", "0" + System.lineSeparator()},
+			  
+			  {"greater than true", "println(3 > 2);", "1" + System.lineSeparator()},
+			  {"greater than false", "println(2 > 2);", "0" + System.lineSeparator()},
+			  
+			  {"greater than or equal true", "println(2 >= 2);", "1" + System.lineSeparator()},
+			  {"greater than or equal false", "println(1 >= 2);", "0" + System.lineSeparator()},
 		};
+	}
+	
+	private static String[] example(String name, String expectedResult) throws Exception {
+		
+		try(InputStream in = CompilerTest.class.getResourceAsStream("/examples/" + name + ".txt")) {
+			
+			if (in == null) {
+				throw new IllegalArgumentException("No such example <" + name + ">");
+			}
+			
+			String code = new Scanner(in, "UTF-8").useDelimiter("\\A").next(); 
+			return new String[]{name, code, expectedResult};
+		}
 	}
 	
 	private String compileAndRun(String code) throws Exception {

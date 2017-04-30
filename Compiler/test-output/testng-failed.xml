@@ -5,7 +5,7 @@
     <classes>
       <class name="de.letsbuildacompiler.compiler.CompilerTest">
         <methods>
-          <include name="runningCodeoutputsExpectedText" invocation-numbers="13"/>
+          <include name="runningCodeoutputsExpectedText" invocation-numbers="18 19 20 21 22 23 24 25"/>
           <include name="deleteTempDir"/>
           <include name="createTempDir"/>
         </methods>
