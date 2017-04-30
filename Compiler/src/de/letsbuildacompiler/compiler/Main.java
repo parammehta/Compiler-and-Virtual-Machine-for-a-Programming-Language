@@ -20,8 +20,16 @@ public class Main {
 	public static void main(String[] args) throws Exception {
 		tempDir = Files.createTempDirectory("outputTest");
 		ANTLRInputStream input = new ANTLRFileStream("code.demo");
-		//System.out.println(compile(input));
-		System.out.println(compileAndRun(input));
+		Scanner s = new Scanner(System.in);
+		System.out.println("Instructions\nPress 1 for Intermediate Code\nPress 2 for Output");
+		int inputfromuser = s.nextInt();
+		if (inputfromuser == 1) {
+			System.out.println(compile(input));
+		} else if (inputfromuser == 2) {
+			System.out.println(compileAndRun(input));
+		} else {
+			System.out.println("Invalid choice");
+		}
 	}
 	
 	private static String compileAndRun(ANTLRInputStream input) throws Exception {
