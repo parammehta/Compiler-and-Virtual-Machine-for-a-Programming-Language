@@ -1,0 +1,37 @@
+ 
+ldc 10
+istore 0
+ldc 5
+istore 1
+ldc 15
+istore 2
+getstatic java/lang/System/out Ljava/io/PrintStream;
+iload 0
+iload 1
+iadd
+invokevirtual java/io/PrintStream/println(I)V
+
+getstatic java/lang/System/out Ljava/io/PrintStream;
+iload 1
+iload 2
+iadd
+invokevirtual java/io/PrintStream/println(I)V
+
+getstatic java/lang/System/out Ljava/io/PrintStream;
+iload 0
+iload 2
+iadd
+invokevirtual java/io/PrintStream/println(I)V
+
+getstatic java/lang/System/out Ljava/io/PrintStream;
+iload 0
+iload 1
+iadd
+iload 2
+iadd
+invokevirtual java/io/PrintStream/println(I)V
+
+
+ return
+ 
+.end method

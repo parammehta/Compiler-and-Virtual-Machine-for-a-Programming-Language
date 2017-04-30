@@ -1,0 +1,245 @@
+<html>
+<head>
+<title>TestNG:  Default test</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>Default test</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>26/0/0</td>
+</tr><tr>
+<td>Started on:</td><td>Sat Apr 29 19:05:53 MST 2017</td>
+</tr>
+<tr><td>Total time:</td><td>6 seconds (6718 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='de.letsbuildacompiler.compiler.CompilerTest.runningCodeoutputsExpectedText()'><b>runningCodeoutputsExpectedText</b><br>Test class: de.letsbuildacompiler.compiler.CompilerTest<br>Parameters: plus, println(1+2);, 3
+</td>
+<td></td>
+<td>0</td>
+<td>de.letsbuildacompiler.compiler.CompilerTest@5ae9a829</td></tr>
+<tr>
+<td title='de.letsbuildacompiler.compiler.CompilerTest.runningCodeoutputsExpectedText()'><b>runningCodeoutputsExpectedText</b><br>Test class: de.letsbuildacompiler.compiler.CompilerTest<br>Parameters: chained plus, println(1+2+53);, 56
+</td>
+<td></td>
+<td>0</td>
+<td>de.letsbuildacompiler.compiler.CompilerTest@5ae9a829</td></tr>
+<tr>
+<td title='de.letsbuildacompiler.compiler.CompilerTest.runningCodeoutputsExpectedText()'><b>runningCodeoutputsExpectedText</b><br>Test class: de.letsbuildacompiler.compiler.CompilerTest<br>Parameters: multiple statements, println(1); println(2);, 1
+2
+</td>
+<td></td>
+<td>0</td>
+<td>de.letsbuildacompiler.compiler.CompilerTest@5ae9a829</td></tr>
+<tr>
+<td title='de.letsbuildacompiler.compiler.CompilerTest.runningCodeoutputsExpectedText()'><b>runningCodeoutputsExpectedText</b><br>Test class: de.letsbuildacompiler.compiler.CompilerTest<br>Parameters: minus, println(3-2);, 1
+</td>
+<td></td>
+<td>0</td>
+<td>de.letsbuildacompiler.compiler.CompilerTest@5ae9a829</td></tr>
+<tr>
+<td title='de.letsbuildacompiler.compiler.CompilerTest.runningCodeoutputsExpectedText()'><b>runningCodeoutputsExpectedText</b><br>Test class: de.letsbuildacompiler.compiler.CompilerTest<br>Parameters: times, println(2*3);, 6
+</td>
+<td></td>
+<td>0</td>
+<td>de.letsbuildacompiler.compiler.CompilerTest@5ae9a829</td></tr>
+<tr>
+<td title='de.letsbuildacompiler.compiler.CompilerTest.runningCodeoutputsExpectedText()'><b>runningCodeoutputsExpectedText</b><br>Test class: de.letsbuildacompiler.compiler.CompilerTest<br>Parameters: divide, println(8/2);, 4
+</td>
+<td></td>
+<td>0</td>
+<td>de.letsbuildacompiler.compiler.CompilerTest@5ae9a829</td></tr>
+<tr>
+<td title='de.letsbuildacompiler.compiler.CompilerTest.runningCodeoutputsExpectedText()'><b>runningCodeoutputsExpectedText</b><br>Test class: de.letsbuildacompiler.compiler.CompilerTest<br>Parameters: divide and truncate, println(9-2*3);, 3
+</td>
+<td></td>
+<td>0</td>
+<td>de.letsbuildacompiler.compiler.CompilerTest@5ae9a829</td></tr>
+<tr>
+<td title='de.letsbuildacompiler.compiler.CompilerTest.runningCodeoutputsExpectedText()'><b>runningCodeoutputsExpectedText</b><br>Test class: de.letsbuildacompiler.compiler.CompilerTest<br>Parameters: precedence times and divide, println(8/2*4);, 16
+</td>
+<td></td>
+<td>0</td>
+<td>de.letsbuildacompiler.compiler.CompilerTest@5ae9a829</td></tr>
+<tr>
+<td title='de.letsbuildacompiler.compiler.CompilerTest.runningCodeoutputsExpectedText()'><b>runningCodeoutputsExpectedText</b><br>Test class: de.letsbuildacompiler.compiler.CompilerTest<br>Parameters: precedence plus and times, println(2+3*3);, 11
+</td>
+<td></td>
+<td>0</td>
+<td>de.letsbuildacompiler.compiler.CompilerTest@5ae9a829</td></tr>
+<tr>
+<td title='de.letsbuildacompiler.compiler.CompilerTest.runningCodeoutputsExpectedText()'><b>runningCodeoutputsExpectedText</b><br>Test class: de.letsbuildacompiler.compiler.CompilerTest<br>Parameters: precedence minus and times, println(18-2+7);, 23
+</td>
+<td></td>
+<td>0</td>
+<td>de.letsbuildacompiler.compiler.CompilerTest@5ae9a829</td></tr>
+<tr>
+<td title='de.letsbuildacompiler.compiler.CompilerTest.runningCodeoutputsExpectedText()'><b>runningCodeoutputsExpectedText</b><br>Test class: de.letsbuildacompiler.compiler.CompilerTest<br>Parameters: print, int x; x = 33; println(x);, 33
+</td>
+<td></td>
+<td>0</td>
+<td>de.letsbuildacompiler.compiler.CompilerTest@5ae9a829</td></tr>
+<tr>
+<td title='de.letsbuildacompiler.compiler.CompilerTest.runningCodeoutputsExpectedText()'><b>runningCodeoutputsExpectedText</b><br>Test class: de.letsbuildacompiler.compiler.CompilerTest<br>Parameters: print with add, int y; y = 8843; println(y+2);, 8845
+</td>
+<td></td>
+<td>0</td>
+<td>de.letsbuildacompiler.compiler.CompilerTest@5ae9a829</td></tr>
+<tr>
+<td title='de.letsbuildacompiler.compiler.CompilerTest.runningCodeoutputsExpectedText()'><b>runningCodeoutputsExpectedText</b><br>Test class: de.letsbuildacompiler.compiler.CompilerTest<br>Parameters: print add, int a; int b; a = 3; b = 5; println(a+b);, 8
+</td>
+<td></td>
+<td>0</td>
+<td>de.letsbuildacompiler.compiler.CompilerTest@5ae9a829</td></tr>
+<tr>
+<td title='de.letsbuildacompiler.compiler.CompilerTest.runningCodeoutputsExpectedText()'><b>runningCodeoutputsExpectedText</b><br>Test class: de.letsbuildacompiler.compiler.CompilerTest<br>Parameters: return only, int example() {return 1;} println(example());, 1
+</td>
+<td></td>
+<td>0</td>
+<td>de.letsbuildacompiler.compiler.CompilerTest@5ae9a829</td></tr>
+<tr>
+<td title='de.letsbuildacompiler.compiler.CompilerTest.runningCodeoutputsExpectedText()'><b>runningCodeoutputsExpectedText</b><br>Test class: de.letsbuildacompiler.compiler.CompilerTest<br>Parameters: return only function, int example() {int i; i = 4; return i;} println(example());, 4
+</td>
+<td></td>
+<td>0</td>
+<td>de.letsbuildacompiler.compiler.CompilerTest@5ae9a829</td></tr>
+<tr>
+<td title='de.letsbuildacompiler.compiler.CompilerTest.runningCodeoutputsExpectedText()'><b>runningCodeoutputsExpectedText</b><br>Test class: de.letsbuildacompiler.compiler.CompilerTest<br>Parameters: function within function, int example() {int i; i = 1; return i;} int i; i = 63; println(example()); println(i);, 1
+63
+</td>
+<td></td>
+<td>0</td>
+<td>de.letsbuildacompiler.compiler.CompilerTest@5ae9a829</td></tr>
+<tr>
+<td title='de.letsbuildacompiler.compiler.CompilerTest.runningCodeoutputsExpectedText()'><b>runningCodeoutputsExpectedText</b><br>Test class: de.letsbuildacompiler.compiler.CompilerTest<br>Parameters: branch/if_int_false, if (0) {
+	println(81);
+} else {
+	println(42);
+}, 42
+</td>
+<td></td>
+<td>0</td>
+<td>de.letsbuildacompiler.compiler.CompilerTest@5ae9a829</td></tr>
+<tr>
+<td title='de.letsbuildacompiler.compiler.CompilerTest.runningCodeoutputsExpectedText()'><b>runningCodeoutputsExpectedText</b><br>Test class: de.letsbuildacompiler.compiler.CompilerTest<br>Parameters: branch/if_int_true, if (1) {
+	println(81);
+} else {
+	println(42);
+}, 81
+</td>
+<td></td>
+<td>0</td>
+<td>de.letsbuildacompiler.compiler.CompilerTest@5ae9a829</td></tr>
+<tr>
+<td title='de.letsbuildacompiler.compiler.CompilerTest.runningCodeoutputsExpectedText()'><b>runningCodeoutputsExpectedText</b><br>Test class: de.letsbuildacompiler.compiler.CompilerTest<br>Parameters: lower than true, println(1 < 2);, 1
+</td>
+<td></td>
+<td>0</td>
+<td>de.letsbuildacompiler.compiler.CompilerTest@5ae9a829</td></tr>
+<tr>
+<td title='de.letsbuildacompiler.compiler.CompilerTest.runningCodeoutputsExpectedText()'><b>runningCodeoutputsExpectedText</b><br>Test class: de.letsbuildacompiler.compiler.CompilerTest<br>Parameters: lower than false, println(2 < 2);, 0
+</td>
+<td></td>
+<td>0</td>
+<td>de.letsbuildacompiler.compiler.CompilerTest@5ae9a829</td></tr>
+<tr>
+<td title='de.letsbuildacompiler.compiler.CompilerTest.runningCodeoutputsExpectedText()'><b>runningCodeoutputsExpectedText</b><br>Test class: de.letsbuildacompiler.compiler.CompilerTest<br>Parameters: lower than or equal true, println(2 <= 2);, 1
+</td>
+<td></td>
+<td>0</td>
+<td>de.letsbuildacompiler.compiler.CompilerTest@5ae9a829</td></tr>
+<tr>
+<td title='de.letsbuildacompiler.compiler.CompilerTest.runningCodeoutputsExpectedText()'><b>runningCodeoutputsExpectedText</b><br>Test class: de.letsbuildacompiler.compiler.CompilerTest<br>Parameters: lower than or equal false, println(3 <= 2);, 0
+</td>
+<td></td>
+<td>0</td>
+<td>de.letsbuildacompiler.compiler.CompilerTest@5ae9a829</td></tr>
+<tr>
+<td title='de.letsbuildacompiler.compiler.CompilerTest.runningCodeoutputsExpectedText()'><b>runningCodeoutputsExpectedText</b><br>Test class: de.letsbuildacompiler.compiler.CompilerTest<br>Parameters: greater than true, println(3 > 2);, 1
+</td>
+<td></td>
+<td>0</td>
+<td>de.letsbuildacompiler.compiler.CompilerTest@5ae9a829</td></tr>
+<tr>
+<td title='de.letsbuildacompiler.compiler.CompilerTest.runningCodeoutputsExpectedText()'><b>runningCodeoutputsExpectedText</b><br>Test class: de.letsbuildacompiler.compiler.CompilerTest<br>Parameters: greater than false, println(2 > 2);, 0
+</td>
+<td></td>
+<td>0</td>
+<td>de.letsbuildacompiler.compiler.CompilerTest@5ae9a829</td></tr>
+<tr>
+<td title='de.letsbuildacompiler.compiler.CompilerTest.runningCodeoutputsExpectedText()'><b>runningCodeoutputsExpectedText</b><br>Test class: de.letsbuildacompiler.compiler.CompilerTest<br>Parameters: greater than or equal true, println(2 >= 2);, 1
+</td>
+<td></td>
+<td>0</td>
+<td>de.letsbuildacompiler.compiler.CompilerTest@5ae9a829</td></tr>
+<tr>
+<td title='de.letsbuildacompiler.compiler.CompilerTest.runningCodeoutputsExpectedText()'><b>runningCodeoutputsExpectedText</b><br>Test class: de.letsbuildacompiler.compiler.CompilerTest<br>Parameters: greater than or equal false, println(1 >= 2);, 0
+</td>
+<td></td>
+<td>0</td>
+<td>de.letsbuildacompiler.compiler.CompilerTest@5ae9a829</td></tr>
+</table><p>
+</body>
+</html>

@@ -1,0 +1,12 @@
+int a;
+int b;
+int c;
+int d;
+a = 10;
+b = 5;
+c = 15;
+d = c+a;
+println(a/b*c);
+println(b*c/a);
+println(a-c/b+d);
+println(a+b-c*c/d);
