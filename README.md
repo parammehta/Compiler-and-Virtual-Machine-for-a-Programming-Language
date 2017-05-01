@@ -15,7 +15,7 @@ Our intermediate code is written using function calls that reads the parse tree 
 	
 **[Run]**
 
-You can choose to build the source code again, or you can directly use the build folder. To run, please execute the following commands from the data/Sample Programs directory of this repository. The source jar file should be in the same folder as the sample programs.
+You can choose to build the source code again, or you can directly use the jar file under the data/Sample Programs folder. To run, please execute the following commands from the data/Sample Programs directory of this repository. The source jar file should be in the same folder as the sample programs.
 
 **[Running from command line/terminal]**
 
