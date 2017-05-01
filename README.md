@@ -16,6 +16,7 @@ Our intermediate code is written using function calls that reads the parse tree 
 **[Running from command line/terminal]**
 
 To run, please execute the following commands and the <program>.apla file should also be at the same level as .jar file.
+
 $ java -jar SER502Team31.jar <program_name>.apla
 
 **[YouTube Link:]** https://youtu.be/QiHVstEhyKI
