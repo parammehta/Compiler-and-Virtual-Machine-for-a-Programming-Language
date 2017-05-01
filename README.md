@@ -47,3 +47,5 @@ Our intermediate code is written using function calls that reads the parse tree 
 	We implemented functions as a blueprint for if-then-else statements and decided to keep the feature. Functions do not accept arguments as of now.
 2. Scope:
 	To have multiple variables within/outside of functions, we implemented scope so this can be allowed.
+	
+YouTube Link: https://youtu.be/QiHVstEhyKI
