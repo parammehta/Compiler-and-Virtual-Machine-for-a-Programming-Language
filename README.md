@@ -2,6 +2,7 @@
 The compiler and the runtime are built on Linux.
 antlr.jar used for Lexical Analysis and jasmin.jar used for creating .class files.
 Runtime Environment is Java Virtual Machine and runs directly from Eclipse by clicking on run under Main.java.
+You can run the project on Windows, Mac or Linux using following instructions.
 
 **[Installation]**
 When importing the project into Eclipse, you will require the plug-in TestNG. The plug-in is strictly used for our test cases, however, you may still run our Main.java without installing the plug-in.

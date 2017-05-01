@@ -19,7 +19,7 @@ public class Main {
 	
 	public static void main(String[] args) throws Exception {
 		tempDir = Files.createTempDirectory("outputTest");
-		ANTLRInputStream input = new ANTLRFileStream("code.demo");
+		ANTLRInputStream input = new ANTLRFileStream("./data/Sample Program/function.apla");
 		Scanner s = new Scanner(System.in);
 		System.out.println("Instructions\nPress 1 for Intermediate Code\nPress 2 for Output");
 		int inputfromuser = s.nextInt();
