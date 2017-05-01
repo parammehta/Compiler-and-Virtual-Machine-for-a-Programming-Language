@@ -32,7 +32,7 @@ Note that the URL's are update sites as well, not direct download links."
 5) Restart eclipse when prompted
 6) Go to Compiler -> test -> de -> letsbuildacompiler -> compiler - > CompilerTest.java under the src folder
 7) Click on the error part against @BeforeMethod and click on Add TestNG library to solve all the errors
-8) Go to Compiler -> src -> de -> letsbuildacompiler -> compiler -> Main.java and check for the path of the input file (ANTLRInputStream input = new ANTLRFileStream("<INPUT_FILE_PATH>");) you are passing to check output
+8) Go to Compiler -> src -> de -> letsbuildacompiler -> compiler -> Main.java and check for the path of the input file (ANTLRInputStream input = new ANTLRFileStream("<INPUT_FILE_PATH>");) viz ./data/Sample Program/function.apla according to the program you are passing to check output
 9) Change the paths to the code files you want to test by the one's given under Sample Programs (Example: add.apla, sub.apla, functions.apla)
 10) Run the Main.java
 11) Press 1 --> Intermediate 2 --> Output
