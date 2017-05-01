@@ -1,0 +1,33 @@
+Steps Involved are as Follows:
+
+Lexical Grammar
+Lexical Analyser
+Parser Tree
+Parsing
+Intermediate Code Generation
+Evaluation
+Runtime, Execution
+
+
+Non-Techical Activities:
+
+Documentation
+Repository, Overall Project Management
+Testing and Maintenance
+Video
+
+
+We Believe in Pair Programming.
+
+
+Present Work:
+
+Lexical Grammar - Anuj, Luis
+Parser tree - Luis, Param
+Lexical Analyser - Anuj, Param
+Parsing - Anuj, Luis
+Intermediate Code Generation - Anuj, Luis
+Modifications and Integration of Grammar - Adi, Luis
+Documentation - Adi, Param
+Repository and Overall Project Management - Anuj, Luis, Param
+Testing and Maintenance - Everyone
