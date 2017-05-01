@@ -1,0 +1,19 @@
+int exampleFunction1() {
+	int a;
+	int b;
+	a = 5;
+	b = 8;
+	int c;
+	c = a + b;
+	return c;
+}
+
+int exampleFunction2() {
+
+	int a;
+	a = 5;
+	int c;
+	c = a * exampleFunction1()/5 - 2 * 9;
+	return c;
+}
+println(exampleFunction2());

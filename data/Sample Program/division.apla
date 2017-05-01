@@ -1,0 +1,10 @@
+int a;
+int b;
+int c;
+a = 10;
+b = 5;
+c = 15;
+println(a/b);
+println(b/c);
+println(a/c);
+println(a/b/c);
