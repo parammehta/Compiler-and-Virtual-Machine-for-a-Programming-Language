@@ -13,6 +13,10 @@ Our intermediate code is written using function calls that reads the parse tree 
 2. Scope:
 	To have multiple variables within/outside of functions, we implemented scope so this can be allowed.
 	
+**[Run]**
+
+You can choose to build the source code again, or you can directly use the build folder. To run, please execute the following commands from the data/Sample Programs directory of this repository. The source jar file should be in the same folder as the sample programs.
+
 **[Running from command line/terminal]**
 
 To run, please execute the following commands and the <program>.apla file should also be at the same level as .jar file.
