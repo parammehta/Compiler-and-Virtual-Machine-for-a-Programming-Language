@@ -19,7 +19,8 @@ public class Main {
 	
 	public static void main(String[] args) throws Exception {
 		tempDir = Files.createTempDirectory("outputTest");
-		ANTLRInputStream input = new ANTLRFileStream("function.apla");
+		// ANTLRInputStream input = new ANTLRFileStream("function.apla"); // If you want to run from eclipse comment the below line and uncomment this
+		ANTLRInputStream input = new ANTLRFileStream(args[0]);
 		Scanner s = new Scanner(System.in);
 		System.out.println("Instructions\nPress 1 for Intermediate Code\nPress 2 for Output");
 		int inputfromuser = s.nextInt();
